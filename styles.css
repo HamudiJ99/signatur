@@ -1,0 +1,529 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --background-color: #f8f9fa;
+    --text-color: #2c3e50;
+    --border-color: #ddd;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.15), rgba(52, 152, 219, 0.18));
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.input-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.name-input {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.name-input label {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.name-input input {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    min-width: 200px;
+    transition: border-color 0.3s ease;
+}
+
+.name-input input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--secondary-color);
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.preview-section, .practice-section {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+}
+
+.preview-section h2, .practice-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.signature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.style-categories {
+    margin-bottom: 30px;
+}
+
+.category {
+    margin-bottom: 40px;
+}
+
+.category h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.signature-preview {
+    border: 3px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    position: relative;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.signature-preview:hover {
+    border-color: var(--secondary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.2);
+}
+
+.signature-preview.selected {
+    border-color: var(--accent-color);
+    background: #fff5f5;
+}
+
+.signature-preview::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.signature-preview.selected::before {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.signature-text {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    user-select: none;
+}
+
+.signature-style {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Signature Font Styles - alle in einer Farbe */
+.style-elegant { 
+    font-family: 'Allura', cursive; 
+    font-size: 2.8rem;
+    color: #2c3e50;
+}
+
+.style-casual { 
+    font-family: 'Dancing Script', cursive; 
+    font-size: 2.6rem;
+    color: #2c3e50;
+}
+
+.style-handwritten { 
+    font-family: 'Caveat', cursive; 
+    font-size: 2.4rem;
+    color: #2c3e50;
+    transform: rotate(-2deg);
+}
+
+.style-script-bold {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.style-minimalist {
+    font-family: 'Kalam', cursive;
+    font-size: 2.2rem;
+    color: #2c3e50;
+    letter-spacing: 2px;
+}
+
+.style-classic {
+    font-family: 'Satisfy', cursive;
+    font-size: 2.7rem;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.style-business {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+/* Neue elegante Stile - ohne störende Verzierungen */
+.style-royal {
+    font-family: 'Allura', cursive;
+    font-size: 3.2rem;
+    color: #2c3e50;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+}
+
+.style-flourish {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #2c3e50;
+    transform: rotate(-1deg);
+}
+
+.style-underlined {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.8rem;
+    color: #2c3e50;
+}
+
+.style-swash {
+    font-family: 'Satisfy', cursive;
+    font-size: 2.9rem;
+    color: #2c3e50;
+    transform: skew(-3deg);
+}
+
+.style-vintage {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.7rem;
+    color: #2c3e50;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.2);
+}
+
+.style-calligraphy {
+    font-family: 'Allura', cursive;
+    font-size: 3.1rem;
+    color: #2c3e50;
+    font-weight: 300;
+}
+
+/* Signature animations and effects */
+.signature-text {
+    transition: all 0.3s ease;
+}
+
+.signature-preview:hover .signature-text {
+    transform: scale(1.05);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.action-buttons {
+    text-align: center;
+}
+
+.practice-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.practice-header h2 {
+    margin-bottom: 15px;
+}
+
+.practice-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.practice-canvas {
+    margin: 30px 0;
+    text-align: center;
+    overflow: auto;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    background: #f8f9fa;
+    padding: 20px;
+    max-height: 80vh;
+}
+
+.canvas-container {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    cursor: grab;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.canvas-container:active {
+    cursor: grabbing;
+}
+
+#practiceCanvas {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: block;
+}
+
+.practice-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.practice-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.practice-options input, .practice-options select {
+    padding: 5px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+#downloadBtn {
+    background: var(--accent-color);
+}
+
+#downloadBtn:hover {
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+#backBtn {
+    background: #95a5a6;
+}
+
+#backBtn:hover {
+    box-shadow: 0 4px 15px rgba(149, 165, 166, 0.3);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .name-input {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .signature-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .signature-text {
+        font-size: 2rem;
+    }
+    
+    #practiceCanvas {
+        width: 100%;
+        height: 400px;
+    }
+    
+    .practice-controls {
+        flex-direction: column;
+    }
+    
+    .practice-options {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Loading animation */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Option Groups Styling */
+.option-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.option-group label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+    text-align: center;
+}
+
+.option-group select, 
+.option-group input[type="range"] {
+    padding: 8px 12px;
+    border: 2px solid #bdc3c7;
+    border-radius: 4px;
+    font-size: 14px;
+    min-width: 120px;
+    background: white;
+    transition: border-color 0.3s ease;
+}
+
+.option-group select:focus, 
+.option-group input[type="range"]:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.zoom-value {
+    font-size: 12px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+/* Zoom-Slider spezielle Styling */
+#zoomLevel {
+    background: linear-gradient(to right, #3498db 0%, #2ecc71 100%);
+}
+
+#zoomLevel::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+#zoomLevel::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #3498db;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+/* Fade in animation */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

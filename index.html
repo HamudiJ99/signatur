@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unterschrift Üben - Signature Practice</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Allura:wght@400&family=Dancing+Script:wght@400;700&family=Great+Vibes&family=Pacifico&family=Satisfy&family=Caveat:wght@400;700&family=Kalam:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🖋️ Unterschrift Üben</h1>
+            <p>Erstelle verschiedene Unterschriftsstile und übe sie!</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="name-input">
+                    <label for="nameInput">Dein Name:</label>
+                    <input type="text" id="nameInput" placeholder="" maxlength="20">
+                    <button id="generateBtn">Vorlagen Erstellen</button>
+                </div>
+            </div>
+
+            <div id="previewSection" class="preview-section" style="display: none;">
+                <h2>Unterschriftsstile Vorschau</h2>
+                
+                <div class="style-categories">
+                    <div class="category">
+                        <h3>🖋️ Verschiedene Unterschriftsstile</h3>
+                        <div id="fontSignatures" class="signature-grid">
+                            <!-- Font-based signatures -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="selectStyleBtn" disabled>Stil auswählen</button>
+                </div>
+            </div>
+
+            <div id="practiceSection" class="practice-section" style="display: none;">
+                <div class="practice-header">
+                    <h2>Übungsvorlage für: <span id="selectedName"></span></h2>
+                    <p>Ausgewählter Stil: <span id="selectedStyle"></span></p>
+                    <div class="practice-controls">
+                        <button id="downloadBtn">📥 Vorlage Herunterladen</button>
+                        <button id="backBtn">← Zurück zur Auswahl</button>
+                    </div>
+                </div>
+                
+                <div class="practice-canvas">
+                    <div class="canvas-container" id="canvasContainer">
+                        <canvas id="practiceCanvas" width="800" height="600"></canvas>
+                    </div>
+                </div>
+                
+                <div class="practice-options">
+                    <label>
+                        <input type="checkbox" id="showGuides" checked> Hilfslinien anzeigen
+                    </label>
+                    <label>
+                        Anzahl Zeilen: 
+                        <select id="lineCount">
+                            <option value="5">5</option>
+                            <option value="8">8</option>
+                            <option value="12" selected>12</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="25">25</option>
+                        </select>
+                    </label>
+                    <label>
+                        Format:
+                        <select id="pageFormat">
+                            <option value="A4-portrait">A4 Hochformat</option>
+                            <option value="A4-landscape">A4 Querformat</option>
+                            <option value="A3-portrait">A3 Hochformat</option>
+                            <option value="A3-landscape" selected>A3 Querformat</option>
+                        </select>
+                    </label>
+                    <label>
+                        Schrift-Deckkraft:
+                        <select id="fontOpacity">
+                            <option value="0.05">Sehr hell (5%)</option>
+                            <option value="0.1">Leicht (10%)</option>
+                            <option value="0.15" selected>Normal (15%)</option>
+                            <option value="0.2">Deutlich (20%)</option>
+                            <option value="0.3">Stark (30%)</option>
+                        </select>
+                    </label>
+                    <label>
+                        Schrift-Farbe:
+                        <select id="fontColor">
+                            <option value="0,0,0" selected>Schwarz</option>
+                            <option value="0,0,255">Blau</option>
+                            <option value="255,0,0">Rot</option>
+                            <option value="128,128,128">Grau</option>
+                            <option value="0,128,0">Grün</option>
+                        </select>
+                    </label>
+                    <label>
+                        🔍 Zoom:
+                        <input type="range" id="zoomLevel" min="25" max="200" value="100">
+                        <span class="zoom-value">100%</span>
+                    </label>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script-new.js"></script>
+</body>
+</html>
